@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" media="screen" href="footer.css">
+    <link rel="stylesheet" media="screen" href="head.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="icon" href="image/logo.jpg">
+    <title>THADOMAL SHAHANI ENGINEERING COLLEGE</title>
+    <style>
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    width: 100%;
+    height: 900px;
+    margin: 10px 10%;
+    overflow: hidden;
+}
+
+header {background-color: blue;
+
+		color: white;
+		font-family: tahoma;
+		padding: 5px 2px 2px 5px;
+	}	
+
+
+header .log{
+	display: inline-block;
+	padding-right: 200px;
+}
+
+.size{
+	width: 30px;
+	height: 20px;
+}
+
+header .size{
+	padding-bottom: 1px;
+	padding-right: 5px;
+}
+
+header .para{
+	
+	display: inline-block;
+	padding-right: 100px;
+	color: white;
+	font-size: 20px;
+	padding-bottom: 10px;
+	padding-right: 200px;
+	width: 30px;
+	height: 1px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+    </style>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="./script.js"></script>
+
+</head>
+<body>
+    <header>
+<img src= "TSECLogo.jpg" class= "log">
+		<img src= "Phone.png" class= "size">
+		<p class= "para">+919619713065</p>
+		<img src= "Email.png" class= "size">
+		<p class= "para"> gtthampi@gmail.com</p>
+    </header>
+    
+       
+        <!-- Photo Grid -->
+    <div class="row"> 
+    <div class="column">
+      <!-- <img src="image/Header_Image-1.png" style="width:100%"> -->
+      <!-- <img src="image/rangoli.jpg" style="width:100%"> -->
+      <img src="image/sl.JPG" style="width:100%">
+      <!-- <img src="image/_DSC2064.jpg" style="width:100%"> -->
+      <img src="image/fest.jpg" style="width:100%">
+      <img src="image/DPP_0147.jpg" style="width:100%">
+      <img src="image/garden.jpg" style="width:100%">
+      <img src="image/event.jpg" style="width:100%">
+    </div>
+	
+ <div class="column">
+        <img src="image/NVP_2789.jpg" style="width:100%">
+        <img src="image/IMG_20181105_183024.JPG" style="width:100%">
+        <img src="image/YL_1541422906449.png" style="width:100%">
+        <img src="image/YL_1541423232499.png" style="width:100%">
+        <img src="image/DPP_0080.jpg" style="width:100%">
+        <img src="image/festival.jpg" style="width:100%">
+      </div>
+
+
+  
+    <div class="column">
+         <img src="image/NVP_2789.jpg" style="width:100%">
+      <img src="image/IMG_20181105_183024.JPG" style="width:100%">
+      <img src="image/YL_1541422906449.png" style="width:100%">
+      <img src="image/YL_1541423232499.png" style="width:100%">
+      <img src="image/DPP_0080.jpg" style="width:100%">
+      <img src="image/festival.jpg" style="width:100%">
+      </div>
+       <div class="column">
+
+        <img src="image/sl.jpg" style="width:100%">
+        <img src="image/garden.jpg" style="width:100%">
+        <img src="image/event.jpg" style="width:100%">
+
+     
+    </div>  
+      </div>
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+        $("img").dblclick(function(){
+        $(this).slideUp();
+    });
+});
+
+</script>
+
+</body>
+</html>

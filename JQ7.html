@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" media="screen" href="admission.css">    
+    <title>THADOMAL SHAHANI ENGINEERING COLLEGE</title>
+   	<link rel="icon" href="logo.jpg" type="image/icon type">
+		<title>TSEC</title>
+	
+	<link href="./style.css" type= "text/css" rel= "stylesheet">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="./script.js"></script>
+    
+</head>
+<body>  
+<header>
+		<img src= "TSECLogo.jpg" class= "log">
+		<img src= "Phone.png" class= "size">
+		<p class= "para">+919619713065</p>
+		<img src= "Email.png" class= "size">
+		<p class= "para"> gtthampi@gmail.com</p>
+	</header>
+         <form>
+           
+        <label for="name">Name</label><input type="text" name="name" required> <br>
+            <label for="name">Surname</label><input type="text" name="fname" class="father-name"> <br>
+            <label for="email">Email</label><input type="email" name="email" required class="father-name"> <br>
+            <label for="Phone">Phone Number</label><input type="tel" name="phone" required class="father-name"> <br>
+            <label for="Phone">Guardian Phone Number</label><input type="tel" name="pphone" required class="father-name"> <br>
+            <label for="gender">Gender</label> <select name="gender" id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select> <br>
+            <label for="degree">Education</label> <select name="hdegree" id="hdegree" required>
+                <option value="10">10th</option>
+                <option value="2nd PUC">HSC</option>
+                <option value="diploma">Diploma</option>
+            </select id="apply-for"> <br>
+            <label for="apply-for" id="dialog">To Pursue</label> <select name="applyfor"  required>
+                <option value="Graduation">Graduation</option>
+                <option value="Post-Graduation">Post-Graduation</option>
+                <option value="MS">MS</option>
+            </select> <br>
+            <input type="submit" value="Submit" name="login">
+        </form>
+
+    </table>
+        
+  <script type="text/javascript">
+ 
+   
+    
+    $(document).ready(function(){
+
+       $("select").change(() =>{
+ alert("Stuedent has changed program to MS");
+
+});
+    });
+
+    $(document).ready(function(){
+
+        $("input").focus(function(){
+        $("input").css("border", "solid red").delay(1000);
+    
+    });
+          
+        });
+       
+        $(document).ready(function(){
+
+              $("input").blur(function(){
+        $("input").css("border", "solid black");
+
+        });
+
+              $("form").submit(function(){
+  alert("Submitted");
+});
+
+
+             
+
+               $(window).resize(function() { 
+                    alert('Size Of The Window Has Been Changed !!!'); 
+                }); 
+
+
+               $(window).scroll();
+
+        });
+
+
+
+
+
+
+
+
+</script>
+    
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="icon" href="logo.jpg" type="image/icon type">
+		<title>TSEC</title>
+	
+	<link href="./style.css" type= "text/css" rel= "stylesheet">
+</head>
+<body>
+<body >
+	<header>
+		<img src= "TSECLogo.jpg" class= "log">
+		<img src= "Phone.png" class= "size">
+		<p class= "para">+919619713065</p>
+		<img src= "Email.png" class= "size">
+		<p class= "para"> gtthampi@gmail.com</p>
+	</header>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="./script.js"></script>
+</head>
+<body>
+
+	<table border="5"  cellpadding="5px" cellspacing="5px">
+		<br><br>
+		<tr>
+				<td>No.</td>
+				<td>Name</td>
+				<td>Email</td>
+		</tr>
+				
+				<td>1.</td>
+				<td>Jay Jhangiani</td>
+				<td>jjhanginai@gmail.com</td>
+		<tr>
+				<td>2.</td>
+				<td>Harsh Harwani</td>
+				<td>harshharwani15@gmail.com</td>
+		</tr>
+
+		<tr>
+				<td>3.</td>
+				<td>Darsh Puri</td>
+				<td>darshpuridp@gmail.com</td>
+		</tr>
+
+		<tr>
+				<td>4.</td>
+				<td>Neeraj Danda</td>
+				<td>neerajdandand@gmail.com</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+<p>How are you feeling today : </p>
+	<textarea rows="5" cols="20"></textarea>
+	<p class='count'></p>
+	
+
+	  <script>
+        
+        $(document).ready(function(){
+
+          $("tr:odd").css('background','blue');
+          $("tr:even").css('background','gray');
+
+        });
+
+
+        $(document).ready(function(){
+
+        	let key = 0
+          $('textarea').keypress(()=>{
+          	key++;
+
+          	$('.count').html(`Count = ${key}`);
+          });
+
+
+        });
+        
+        
+        </script>
+
+</body>
+
+</html>
+
