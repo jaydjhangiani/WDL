@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cdcatalog.xsl"?>
+
+<collection>
+  <cd>
+    <Title>Starboy</Title>
+    <Artist>The Weeknd</Artist>
+    <Country>Canada</Country>
+    <Company>Universal</Company>
+    <Price>$90</Price>
+    <Year>2016</Year>
+  </cd>
+  <cd>
+    <Title>In The Lonely Hour</Title>
+    <Artist>Sam Smith</Artist>
+    <Country>UK</Country>
+    <Company>Capitol UK</Company>
+    <Price>$80</Price>
+    <Year>2014</Year>
+  </cd>
+  <cd>
+    <Title>Scorpion</Title>
+    <Artist>Drake</Artist>
+    <Country>Canada</Country>
+    <Company>OVO</Company>
+    <Price>$90</Price>
+    <Year>2018</Year>
+  </cd>
+  <cd>
+    <Title>Trilogy</Title>
+    <Artist>The Weeknd</Artist>
+    <Country>Canada</Country>
+    <Company>Dream House</Company>
+    <Price>$20</Price>
+    <Year>2011</Year>
+  </cd>
+  <cd>
+    <Title>Currents</Title>
+    <Artist>Tame Impala</Artist>
+    <Country>Austraila</Country>
+    <Company>Intrascope</Company>
+    <Price>$90</Price>
+    <Year>2015</Year>
+  </cd>
+</collection>
