@@ -44,47 +44,26 @@
 
 </style>
 
+
 <script>
-	function ValidatePassCheck()
-	{
-	var a=document.signup.pass1.value;
-	var passformat=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-	if(a.match(passformat))
-	{return true;}
-	else
-	{
-	alert("Check Password !!!\n1.Atleast 1 Uppercase Letter.\n2.Atleat 1 Number.\n3.Special Characters Like _ and - only.\n\nMinimum length of 8 characters!!!");
-	pass1.focus();
-	return false;
-	}
-	}
+var request=false;
+if(window.XMLHttpRequest)
+	request=new XMLHttpRequest();
+else{
+	if(window.ActiveXObject)
+		request=new ActiveXObject("Microsoft.XMLHTTP");
+}
 
-	function ValidateMatchpass()
-	{
-	var p1= document.signup.pass1.value;
-	var p2= document.signup.pass2.value;
-	if(p1==p2){
-	return true;
+function validate(UN){
+	request.abort();
+	request.open("GET","validate.php?name=" + name,true);
+	
+	request.onreadystatechange=function() {
+		if(request.readyState==4)
+			document.getElementById("ID1").innerHTML = request.responseText;
 	}
-	else {
-	alert("Passwords do not match!!!");
-	return false;
-	}
-	}	
-
-	function ValidateUnameCheck()
-	{
-	var b=document.signup.uname.value;
-	var unameformat=/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-)[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
-	if(b.match(unameformat))
-	{return true;}
-	else
-	{
-	alert("Check User Name !!!\n1.Usernames can consist of alphanumeric characters.\n2.Usernames can consist of underscore and hyphens");
-	pass1.focus();
-	return false;
-	}
-	}
+	request.send(null);
+}	
 </script>
 
 <body>
@@ -93,40 +72,41 @@
 	<img src= "header.png" >	
 </header>
 
-<form name="signup" onsubmit=" return  ValidateUnameCheck() && ValidatePassCheck() && ValidateMatchpass() ">
+<form name="signup" action="signup.php" method="post">
 
 <table cellpadding="10" align="center">
 
 <tr>
 <td>First Name </td>
-<td><input type="text" placeholder="Enter First Name" ></td>
+<td><input type="text" placeholder="Enter First Name" name = "fname"></td>
 </tr>
 
 <tr>
 <td>Surname </td>
-<td><input type="text" placeholder="Enter Surname" ></td>
+<td><input type="text" placeholder="Enter Surname" name = "sname" ></td>
 </tr>
 
 
 <tr>
 <td>Email </td>
-<td><input type="email" placeholder="Enter a Valid Email Address" ></td>
+<td><input type="email" placeholder="Enter a Valid Email Address" name = "email"></td>
 </tr>
 
 <tr>
 <tr>
 <td>Username</td>
-<td><input type="text" placeholder="Enter Username" name="uname" ></td>
+<td><input type="text" placeholder="Enter Username" name="UN" onkeyup="validate(this.value)"></td>
+<div id= ID1></div>
 </tr>
 
 <tr>
 <td>Password </td>
-<td><input type="password" placeholder="1 Cap Letter, No & SpecialChar" name="pass1" ></td>
+<td><input type="password" placeholder="1 Cap Letter, No & SpecialChar" name="P1" ></td>
 </tr>
 
 <tr>
 <td>Re-Enter Password</td>
-<td><input type="password" placeholder="Enter Password Again required" name="pass2" ></td>
+<td><input type="password" placeholder="Enter Password Again required" name="P2" ></td>
 </tr>
 
 <tr>
@@ -139,6 +119,8 @@
 <button type="submit">Sign Up!</button>
 
 </form>
+
+
 
 </body>
 

@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> College Form </title>
+	<link href="./styleform.css" type= "text/css" rel= "stylesheet">
+	<script type="text/javascript">
+		function ValidateEmail()
+		{
+		var a=document.myform.email.value;
+		var mailformat=/^\w+([\.-]?\w+)*@\w+([.\-]?\w+)*(\.\w{2,3})+$/;
+		if(a.match(mailformat))
+		{return true;}
+		else
+		{
+		alert("Inavlid Email Address!");
+		email.focus();
+		return false;
+		}
+		}
+		function matchpass(){
+			var pass1= document.myform.password.value;
+			var pass2= document.myform.password1.value;
+			
+			if(pass1==pass2){
+				return true;
+			}
+			
+			else {
+				alert("Passwords do not match!");
+				return false;
+			}
+		}
+						
+		function checkdob(){
+			var engg1= document.myform.engg.value;
+			var year1= document.myform.year.value;
+			var month1= document.myform.month.value;
+			var day1= document.myform.date.value;
+			
+			if((engg1=="FE" && year1>=2000 && year1<=2003) || (engg1=="SE" && year1>=1999 && year1<=2001) || (engg1=="TE" && year1>=1998 && year1<=2000) || (engg1=="BE" && year1>=1997 && year1<=1999)){
+				return true;
+			}
+			
+			else{
+				alert(engg1 + " cannot be of year " + year1);
+				return false;
+			}
+			
+			if(((month1=="1" || month1=="3" || month1=="5" || month1=="7" || month1=="8" || month1=="10" || month1=="12") && (day1>=1 && day1<=31)) || ((month1=="4" || month1=="6" || month1=="9" ||month1=="11") 
+					&& (day1>=1 && day1<=30)) || (month1=="2" && year1%4==0 && day1>=1 && day1<=29) || (month1=="2" && year1%4!=0 && day1>=1 && day1<=28)) {
+				return true;
+			}
+			
+			else{
+				alert("Invalid date");
+				return false;
+			}
+		}
+			
+		function checkbranch(){
+			var branch1= document.myform.branch.value;
+			var marks1= document.myform.marks.value;
+			
+			if((branch1=="Comps" && marks1>=150) || (branch1=="IT" && marks1>=130) || (branch1=="EXTC" && marks1>=100) || (branch1=="Chem" && marks1>=80) || (branch1=="BMed" && marks1>=50) || (branch1=="BTech" && marks1>=40)){
+				return true;
+			}
+			
+			else{
+				alert(marks1+ " not enough for " + branch1 + " branch");
+				return false;
+			}
+		}
+
+		$(".text_data td").on("click", function() {
+    var tr = $(this).parent();
+    if(tr.hasClass("selected")) {
+        tr.removeClass("selected");
+    } else {
+        tr.addClass("selected");
+    }
+
+});
+	</script>
+</head>
+
+<body>
+	
+	
+	<div class="Form">
+		<form action="form.rtf" method="POST" name="myform" onsubmit="return matchpass() && checkdob() && checkbranch() && ValidateEmail()">
+		<h1> APPLICATION FORM </h1>
+		
+		<div class="Name">
+			<label for="first"> First Name </label>
+			<input type="text" name="first" id="first" required><br>
+			<label for="middle"> Middle Name </label>
+			<input <type="text" name="middle" id="middle"><br>
+			<label for="last"> Last Name </label>
+			<input type="text" name="last" id="last" required><br>
+		</div>
+		
+		<div class="Email">
+			<label for="email"> Email (xyz@abc.com)</label>
+			<input type="text" name="email" id="email"required>
+		</div>
+		
+		<div class="Password">
+			<label for="password"> Password (6-15 characters)</label>
+			<input type="password" name="password" id="password" required minlength="6" maxlength="15"><br>
+			<label for="password1"> Re-Type Password </label>
+			<input type="password" name="password1" id="password1" required minlength="6" maxlength="15">
+		</div>
+		
+		<div class="Gender">
+			<label for="gender"> Gender: </label>
+			<label for="male"> M </label>
+			<input type="radio" id="male" name="gender" value="Male">
+			<label for="female"> F </label>
+			<input type="radio" id="female" name="gender" value="Female">
+		</div>
+		
+		<div class="DOB">
+			<label for="dob"> Date of Birth: </label>
+			<select id="dob" name="date">
+				<option value="1"> 1 </option>
+				<option value="2"> 2 </option>
+				<option value="3"> 3 </option>
+				<option value="4"> 4 </option>
+				<option value="5"> 5 </option>
+				<option value="6"> 6 </option>
+				<option value="7"> 7 </option>
+				<option value="8"> 8 </option>
+				<option value="9"> 9 </option>
+				<option value="10"> 10 </option>
+				<option value="11"> 11 </option>
+				<option value="12"> 12 </option>
+				<option value="13"> 13 </option>
+				<option value="14"> 14 </option>
+				<option value="15"> 15 </option>
+				<option value="16"> 16 </option>
+				<option value="17"> 17 </option>
+				<option value="18"> 18 </option>
+				<option value="19"> 19 </option>
+				<option value="20"> 20 </option>
+				<option value="21"> 21 </option>
+				<option value="22"> 22 </option>
+				<option value="23"> 23 </option>
+				<option value="24"> 24 </option>
+				<option value="25"> 25 </option>
+				<option value="26"> 26 </option>
+				<option value="27"> 27 </option>
+				<option value="28"> 28 </option>
+				<option value="29"> 29 </option>
+				<option value="30"> 30 </option>
+				<option value="31"> 31 </option>
+			</select>
+			<select id="dob" name="month">
+				<option value="1"> January </option>
+				<option value="2"> February </option>
+				<option value="3"> March </option>
+				<option value="4"> April </option>
+				<option value="5"> May </option>
+				<option value="6"> June </option>
+				<option value="7"> July </option>
+				<option value="8"> August </option>
+				<option value="9"> September </option>
+				<option value="10"> October </option>
+				<option value="11"> November </option>
+				<option value="12"> December </option>
+			</select>
+			<select id="dob" name="year">
+				<option value="1997"> 1997 </option>
+				<option value="1998"> 1998 </option>
+				<option value="1999"> 1999 </option>
+				<option value="2000"> 2000 </option>
+				<option value="2001"> 2001 </option>
+				<option value="2002"> 2002 </option>
+				<!--option value="2003"> 2003 </option-->
+			</select>
+		</div>
+		
+		<div class="Engg">
+			<label for="engg"> Year: </label>
+			<input type="radio" id="FE" name="engg" value="FE">
+			<label for="FE"> FE </label>
+			<input type="radio" id="SE" name="engg" value="SE">
+			<label for="SE"> SE </label>
+			<input type="radio" id="TE" name="engg" value="TE">
+			<label for="TE"> TE </label>
+			<input type="radio" id="BE" name="engg" value="BE">
+			<label for="BE"> BE </label>
+		</div>
+		
+		<div class="Marks">
+			<label for="marks"> CET Score: </label>
+			<input type="number" id= "marks" name= "marks" min="0" max="200" required>
+		</div>
+		
+		<div class="Branch">
+			<label for="branch"> Branch: </label>
+			<select id="branch" name="branch">
+				<option value="Comps"> COMPUTER </option>
+				<option value="IT"> IT </option>
+				<option value="EXTC"> EXTC </option>
+				<option value="Chem"> CHEMICAL </option>
+				<option value="BMed"> BIOMED </option>
+				<option value="BTech"> BIOTECH </option>
+			</select>
+		</div>
+		
+		<div class="Submit">
+			<input type="submit" value="SUBMIT"  >
+		</div>
+	
+</body>
+</html>

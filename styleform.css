@@ -1,0 +1,58 @@
+
+
+.Form{
+	position: relative;
+	top: 30px;
+	left: 220px;
+	background-color: turquoise;
+	border: 1px solid turquoise;
+	border-radius: 5px;
+	width: 800px;
+	height: 500px;
+}
+
+h1{
+	color: red;
+	text-align: center;
+}
+
+.Name{
+	display: inline-block;
+	padding: 20px 10px;
+}
+
+.Email{
+	padding: 10px 10px;
+}
+
+.Password{
+	display: inline-block;
+	padding: 10px 10px;
+}
+
+.DOB{
+	display: inline-block;
+	padding: 10px 10px;
+}
+
+.Engg{
+	padding: 10px 10px;
+}
+
+.Marks{
+	padding: 10px 10px;
+}
+
+.Branch{
+	padding: 10px 10px;
+}
+
+.Submit{
+	position: relative;
+	top: 20px;
+	left: 350px;
+}
+
+.Gender{
+	padding: 10px 10px;
+}

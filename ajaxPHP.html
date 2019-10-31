@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>AJAX APPLICATIION</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0;
+            font-family: sans-serif,Arial, Helvetica, sans-serif;
+            
+        }
+        .box{
+            display: block;
+            width: 400px;
+            padding: 20px;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+      
+        }
+        h1{
+            position: absolute;
+            top: 20px;
+            left: 170px;
+            
+        }
+        .leftitem{
+            display: inline-block;
+            width: 100px;
+            padding: 25px 20px;
+        }
+        .rightitem{
+            display: inline-block;
+            color: black ;
+            width: 200px;
+            height: 30px;
+            
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+        .box input[type="button"]{
+            display: block; 
+            margin: auto;
+            padding: 10px 20px;
+            background: none;
+            border: 2px solid ;
+            border-radius: 10px;
+            transition: padding .3s;
+        }
+        .box input[type="button"]:hover{
+            color: #004068;
+            padding: 10px 30px;
+            cursor: pointer;
+            
+            
+        }
+        #bottomlink{
+            text-decoration: none;
+            
+            font-size: 14px;
+        }
+            p{
+            text-align: justify;
+            padding-bottom:10px;
+            line-height: 15px;
+            margin-left: 120px;
+            width: 1000px; 
+        }
+header {background-color: blue;
+
+		color: white;
+		font-family: tahoma;
+		padding: 5px 2px 2px 5px;
+	}	
+
+
+header .log{
+	display: inline-block;
+	padding-right: 200px;
+}
+
+.size{
+	width: 30px;
+	height: 20px;
+}
+
+header .size{
+	padding-bottom: 1px;
+	padding-right: 5px;
+}
+
+header .para{
+	
+	display: inline-block;
+	padding-right: 100px;
+	color: white;
+	font-size: 20px;
+	padding-bottom: 10px;
+	padding-right: 200px;
+	width: 30px;
+	height: 1px;
+}
+
+            
+    </style>
+</head>
+<body>
+<header>
+		<img src= "TSECLogo.jpg" class= "log">
+		<img src= "Phone.png" class= "size">
+		<p class= "para">+919619713065</p>
+		<img src= "Email.png" class= "size">
+		<p class= "para"> gtthampi@gmail.com</p>
+	</header>
+<script>
+
+var request=false;
+if(window.XMLHttpRequest)
+	request=new XMLHttpRequest();
+else{
+	if(window.ActiveXObject)
+		request=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+function validate(name){
+	request.abort();
+	request.open("GET","validate.php?name=" + name,true);
+	
+	request.onreadystatechange=function() {
+		if(request.readyState==4)
+			document.getElementById("divID").innerHTML = request.responseText;
+	}
+	request.send(null);
+}
+
+function validatepass(password){
+	request.abort();
+	request.open("GET","validatepass.php?password=" + password,true);
+	
+	request.onreadystatechange=function() {
+		if(request.readyState==4)
+			document.getElementById("divID1").innerHTML = request.responseText;
+	}
+	request.send(null);
+}
+</script>
+
+
+ <form class="box" action="#">
+        <div id="top">
+     <h1>SignUp</h1>
+    </div>
+    
+        <label class="leftitem" for="firstname">Username</label>
+        <input class="rightitem" type="text" name="Username" required onkeyup="validate(this.value)"> <br>
+	<div id="divID"> </div>
+        <label class="leftitem" for="email">Email</label>
+        <input class="rightitem" type="email" name="email" required> <br>
+        <div id="divID"> </div>   
+        <label class="leftitem" for="password" >Password</label>
+        <input class="rightitem" type="password" name="password" required required onkeyup="validatepass(this.value)"><br>
+	<div id="divID1"> </div>
+ 	<label class="leftitem" for="repassword" >Re-enter Password</label>
+        <input class="rightitem" type="password" name="repassword" required>
+        <input type="button" name="submit" value="SignUp">
+        <a id="bottomlink" href="login.html">Already a user</a>
+    </form>
+
+</body>
+</html>
